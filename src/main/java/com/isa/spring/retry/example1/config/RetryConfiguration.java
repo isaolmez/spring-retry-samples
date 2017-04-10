@@ -18,7 +18,7 @@ import org.springframework.retry.support.RetryTemplate;
 
 @Configuration
 @PropertySource("application.properties")
-@ComponentScan("com.isa.spring.retry")
+@ComponentScan("com.isa.spring.retry.example1")
 public class RetryConfiguration {
     private final RetryProperties retryProperties;
 
