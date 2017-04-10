@@ -28,7 +28,7 @@ public class ServiceClient {
     public String callWithRetry() {
         return retryTemplate.execute(new RetryCallback<String, RuntimeException>() {
             @Override
-            public String doWithRetry(RetryContext context) throws RuntimeException {
+            public String doWithRetry(RetryContext context) {
                 LOG.info("Inside doWithRetry()");
                 return theService.perform();
             }
@@ -38,7 +38,7 @@ public class ServiceClient {
     public String callWithRetryAndRecover() {
         return retryTemplate.execute(new RetryCallback<String, RuntimeException>() {
             @Override
-            public String doWithRetry(RetryContext context) throws RuntimeException {
+            public String doWithRetry(RetryContext context) {
                 LOG.info("Inside doWithRetry()");
                 return theService.perform();
             }

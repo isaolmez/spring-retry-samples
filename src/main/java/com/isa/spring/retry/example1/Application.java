@@ -1,7 +1,7 @@
 package com.isa.spring.retry.example1;
 
 import com.isa.spring.retry.example1.client.ServiceClient;
-import com.isa.spring.retry.example1.config.CustomRetryConfiguration;
+import com.isa.spring.retry.example1.config.RetryConfiguration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ public class Application {
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
-        try (ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(CustomRetryConfiguration.class)) {
+        try (ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(RetryConfiguration.class)) {
 
             ServiceClient serviceClient = context.getBean(ServiceClient.class);
             try {

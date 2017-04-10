@@ -19,11 +19,11 @@ import org.springframework.retry.support.RetryTemplate;
 @Configuration
 @PropertySource("application.properties")
 @ComponentScan("com.isa.spring.retry")
-public class CustomRetryConfiguration {
+public class RetryConfiguration {
     private final RetryProperties retryProperties;
 
     @Autowired
-    public CustomRetryConfiguration(RetryProperties retryProperties) {
+    public RetryConfiguration(RetryProperties retryProperties) {
         this.retryProperties = retryProperties;
     }
 
