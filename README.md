@@ -1,4 +1,5 @@
-# spring-retry-samples
 Spring Retry Samples
-- Java configuration based retry templates
-- Declarative retry templates
+
+Shows different features of Spring-Retry
+- Java configuration based retry templates: RetryTemplate, BackOffPolicy, RetryPolicy and RetryListener
+- Declarative retry templates using annotations: @Retryable, @Recover and @EnableRetry
