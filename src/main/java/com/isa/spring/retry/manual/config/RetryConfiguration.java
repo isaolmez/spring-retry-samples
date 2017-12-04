@@ -1,4 +1,4 @@
-package com.isa.spring.retry.example1.config;
+package com.isa.spring.retry.manual.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,8 +18,9 @@ import org.springframework.retry.support.RetryTemplate;
 
 @Configuration
 @PropertySource("application.properties")
-@ComponentScan("com.isa.spring.retry.example1")
+@ComponentScan("com.isa.spring.retry.manual")
 public class RetryConfiguration {
+
     private final RetryProperties retryProperties;
 
     @Autowired
@@ -59,6 +60,7 @@ public class RetryConfiguration {
     }
 
     private static class LoggingRetryListener implements RetryListener {
+
         private static final Logger LOG = LoggerFactory.getLogger(LoggingRetryListener.class);
 
         @Override

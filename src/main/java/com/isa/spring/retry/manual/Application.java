@@ -1,7 +1,7 @@
-package com.isa.spring.retry.example2;
+package com.isa.spring.retry.manual;
 
-import com.isa.spring.retry.example2.client.ServiceClient;
-import com.isa.spring.retry.example2.config.RetryConfiguration;
+import com.isa.spring.retry.manual.client.ServiceClient;
+import com.isa.spring.retry.manual.config.RetryConfiguration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Application {
+
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
@@ -20,6 +21,8 @@ public class Application {
             } catch (Exception e) {
                 LOG.error("Exception: ", e);
             }
+
+            serviceClient.callWithRetryAndRecover();
         }
     }
 }

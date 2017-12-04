@@ -1,4 +1,4 @@
-package com.isa.spring.retry.example1.config;
+package com.isa.spring.retry.manual.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

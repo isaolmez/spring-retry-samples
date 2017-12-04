@@ -1,7 +1,7 @@
-package com.isa.spring.retry.example1;
+package com.isa.spring.retry.manual;
 
-import com.isa.spring.retry.example1.client.ServiceClient;
-import com.isa.spring.retry.example1.config.RetryConfiguration;
+import com.isa.spring.retry.manual.client.ServiceClient;
+import com.isa.spring.retry.manual.config.RetryConfiguration;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +23,8 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {RetryConfiguration.class, ServiceClientTest.TestConfiguration.class})
-@TestPropertySource(properties = {"retry.attempts.max=5", "retry.backoff.interval.initial=10", "retry.backoff.interval.max=100", "retry.backoff.interval.multiplier=2"})
+@TestPropertySource(properties = {"retry.attempts.max=5", "retry.backoff.interval.initial=10", "retry.backoff.interval.max=100",
+        "retry.backoff.interval.multiplier=2"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class ServiceClientTest {
 
@@ -68,6 +69,7 @@ public class ServiceClientTest {
 
     @Configuration
     static class TestConfiguration {
+
         @Bean
         @Primary
         public RetryListener retryListener() {

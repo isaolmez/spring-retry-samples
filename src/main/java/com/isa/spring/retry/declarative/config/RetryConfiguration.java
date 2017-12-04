@@ -1,4 +1,4 @@
-package com.isa.spring.retry.example2.config;
+package com.isa.spring.retry.declarative.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,14 +14,16 @@ import org.springframework.retry.annotation.EnableRetry;
 @Configuration
 @EnableRetry
 @PropertySource("application.properties")
-@ComponentScan("com.isa.spring.retry.example2")
+@ComponentScan("com.isa.spring.retry.declarative")
 public class RetryConfiguration {
+
     @Bean
     public RetryListener retryListener() {
         return new LoggingRetryListener();
     }
 
     private static class LoggingRetryListener implements RetryListener {
+
         private static final Logger LOG = LoggerFactory.getLogger(LoggingRetryListener.class);
 
         @Override

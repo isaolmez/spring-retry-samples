@@ -1,6 +1,6 @@
-package com.isa.spring.retry.example2.client;
+package com.isa.spring.retry.declarative.client;
 
-import com.isa.spring.retry.example2.service.TheService;
+import com.isa.spring.retry.declarative.service.TheService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ServiceClient {
+
     private static final Logger LOG = LoggerFactory.getLogger(ServiceClient.class);
 
     private final TheService theService;
@@ -19,6 +20,6 @@ public class ServiceClient {
     }
 
     public String callWithRetry() {
-       return theService.perform();
+        return theService.perform();
     }
 }

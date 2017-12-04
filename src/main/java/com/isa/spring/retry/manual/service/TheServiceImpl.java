@@ -1,9 +1,10 @@
-package com.isa.spring.retry.example1.service;
+package com.isa.spring.retry.manual.service;
 
 import org.springframework.stereotype.Service;
 
 @Service
 public class TheServiceImpl implements TheService {
+
     @Override
     public String perform() {
         throw new RuntimeException("Planned");
